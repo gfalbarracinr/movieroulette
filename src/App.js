@@ -1,23 +1,14 @@
 import { useMemo, useState } from 'react';
-import './App.css';
 import Filter from './components/Filter';
 import Header from './components/Header';
 import FilterType from './components/Filter/FilterType';
-const moviesMock = [
-  {name: "Avatar", genre: FilterType.HORROR},
-  {name: "Titanic", genre: FilterType.CRIME},
-  {name: "Star wars", genre: FilterType.DOCUMENTARY},
-  {name: "Pinochio", genre: FilterType.COMEDY},
-  {name: "Maverick", genre: FilterType.CRIME},
-  {name: "Spiderman", genre: FilterType.DOCUMENTARY},
-  {name: "Avengers", genre: FilterType.HORROR},
-  {name: "Hulk", genre: FilterType.CRIME},
-  {name: "Monsters Inc", genre: FilterType.COMEDY},
+import MovieCard from './components/MovieCard';
+import moviesMock from './assets/movies.json';
+import './App.css';
 
-]
 function App() {
   // eslint-disable-next-line 
-  const [movies, setMovies] = useState(moviesMock);
+  const [movies, setMovies] = useState(moviesMock.movies);
   const [filter, setFilter] = useState(FilterType.ALL);
 
   const filteredMovies = useMemo(() => {
@@ -34,9 +25,10 @@ function App() {
     <div className="App">
       <Header/>
       <Filter handleFilterChange={handleFilterChange}/>
+      <p className='movies-count'>{`${filteredMovies.length} movies found`}</p>
       <main className='movies'>
       {
-        filteredMovies.map(movie => <p key={movie.name}> {movie.name}</p>)
+        filteredMovies.map(movie => <MovieCard key={movie.name} movie={movie} image={require(`./assets/images/movies/${movie.image}`)}/>)
       }
       </main>
     </div>

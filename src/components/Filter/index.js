@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./filter.css"
-import FilterType from "./FilterType";
+import FilterType, { capitalizeFirstLetter } from "./FilterType";
 
 class Filter extends Component {
     constructor(props) {
@@ -13,13 +13,13 @@ class Filter extends Component {
     }
     render() { 
         return (
-            <nav>
+            <Fragment>
                <ol className="filter-options">
-                <li onClick={this.handlerChange} className="filter" value={FilterType.ALL}>All</li> 
-                <li onClick={this.handlerChange} className="filter" value={FilterType.DOCUMENTARY}>Documentary</li> 
-                <li onClick={this.handlerChange} className="filter" value={FilterType.COMEDY}>Comedy</li> 
-                <li onClick={this.handlerChange} className="filter" value={FilterType.HORROR}>Horror</li> 
-                <li onClick={this.handlerChange} className="filter" value={FilterType.CRIME}>Crime</li> 
+                {
+                    Object.entries(FilterType).map(([key, value]) => (
+                        <li onClick={this.handlerChange} key={value} className="filter" value={value}>{capitalizeFirstLetter(key)}</li> 
+                ))
+                }
 
                 <li className="filter order">
                     <label htmlFor="sort-by" className="order-label">Sort by</label>
@@ -30,9 +30,13 @@ class Filter extends Component {
                 </li>
                </ol>
                 <hr className="filter-line"/>
-            </nav>
+            </Fragment>
         );
     }
+}
+
+Filter.propTypes = {
+    handleFilterChange: Function.isrequired
 }
  
 export default Filter;

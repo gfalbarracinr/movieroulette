@@ -1,11 +1,11 @@
 .App {
   text-align: right;
 }
-
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -29,4 +29,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
   color: white;
+}
+
+.movies-count {
+  text-align: left;
+  margin: 20px 60px;
+  color: white
 }
