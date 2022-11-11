@@ -1,0 +1,27 @@
+.add-movie-container {
+  background-color: var(--black);
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 200px;
+  left: 150px;
+  color: var(--red);
+  text-align: left;
+  padding: 15px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row > .col:first-child {
+  margin-right: 5px;
+}
+
+.col {
+  display:flex;
+  flex-direction: column;
+  width: 50%;
+}

@@ -1,12 +1,20 @@
+import { useState } from "react";
+import AddMovie from "../AddMovie";
 import Button from "../Button";
 import Search from "../Search";
 import './header.css'
 
-function Header() {
+const Header = () => {
+    const [showAddMovie, setShowAddMovie] = useState(false);
+
+    const handleClick = () => {
+        setShowAddMovie(true);
+    }
     return (
         <header className="header-container">
-            <Button />
+            <Button handleClick={handleClick}/>
             <Search />
+            {showAddMovie && <AddMovie/>}
         </header>
     );
 }
