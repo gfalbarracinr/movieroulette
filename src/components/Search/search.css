@@ -1,0 +1,28 @@
+.search {
+ margin-left: 178px;
+ display: flex;
+}
+
+.search-input {
+    margin: 0;
+    text-align: left;
+    height: 57px;
+    width: 60%;
+    border: none;
+    background-color: var(--darkGray);
+    color: var(--white)
+}
+.search-submit {
+    margin-left: 14px;
+    border-radius: 4px;
+    border: none;
+    width: 233px;
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.search-title >h1 {
+    text-align: left;
+    margin-left: 178px;
+    color: var(--white);
+}

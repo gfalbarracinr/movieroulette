@@ -1,0 +1,23 @@
+.filter-options{
+    display: flex;
+    list-style-type: none;
+    color: var(--white);
+    margin: 20px 60px;
+}
+
+.filter {
+    margin-right: 30px;
+    cursor: pointer
+}
+.order {
+    margin-left: auto;
+}
+.order-label{
+    margin-right: 30px;
+}
+
+.filter-line {
+    border: solid 1px var(--white);
+    margin: 21px 60px;
+
+}

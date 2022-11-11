@@ -1,0 +1,7 @@
+.header-container {
+    background-image: url('/public/images/header-bg.png');
+    height: 300px;
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
