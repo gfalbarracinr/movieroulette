@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
-import FilterType, { getMovieFilters, resolveFilterName } from '../Filter/FilterType';
+import { getMovieFilters, resolveFilterName } from '../Filter/FilterType';
+import './addMovie.css';
 
 const GenreTypeInput = () => {
-  console.log(Object.keys(FilterType))
   return (
     <Fragment>
       <label for="genre">Genre</label>
-      <select name="genre" id="genre" form="addmovie">
+      <select name="genre" className='addMovie-input' id="genre" form="addmovie">
       {
-        getMovieFilters().map((genre) => <option value={genre}>{resolveFilterName(genre)}</option>)
+        getMovieFilters().map((genre) => <option key={genre} value={genre}>{resolveFilterName(genre)}</option>)
       }
       </select>
     </Fragment>

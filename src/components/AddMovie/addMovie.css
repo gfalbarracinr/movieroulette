@@ -1,12 +1,14 @@
 .add-movie-container {
   background-color: var(--black);
   min-width: 400px;
+  max-width: 980px;
+  width: 80%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   position: fixed;
+  left: 25%;
   top: 200px;
-  left: 150px;
   color: var(--red);
   text-align: left;
   padding: 15px;
@@ -24,4 +26,53 @@
   display:flex;
   flex-direction: column;
   width: 50%;
+}
+
+.addMovie-input {
+  height: 57px;
+  background-color: var(--darkGray);
+  border: none;
+  color: var(--white);
+}
+
+.col.col-100 {
+  width: 100%;
+}
+
+.addMovie-input.addMovie-text {
+  height: 200px;
+  padding: 20px;
+}
+
+.modal-close {
+  margin-left: auto;
+  margin-top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.button-section {
+  margin-top: 15px;
+  margin-left: auto;
+  justify-content: end;
+}
+.button-section > button {
+  height: 57px;
+  width: 180px;
+  border-radius: 4px;
+}
+
+.reset {
+  border: 1px solid var(--red);
+  background-color: var(--black);
+  color: var(--red);
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.submit {
+  border: 1px solid var(--red);
+  background-color: var(--red);
+  color: var(--white);
+  text-transform: uppercase;
 }

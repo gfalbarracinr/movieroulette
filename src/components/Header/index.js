@@ -10,11 +10,15 @@ const Header = () => {
     const handleClick = () => {
         setShowAddMovie(true);
     }
+
+    const handleClose = () => {
+        setShowAddMovie(false);
+    }
     return (
         <header className="header-container">
             <Button handleClick={handleClick}/>
             <Search />
-            {showAddMovie && <AddMovie/>}
+            {showAddMovie && <AddMovie handleClose={handleClose}/>}
         </header>
     );
 }
