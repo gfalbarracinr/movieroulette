@@ -4,7 +4,7 @@ import Button from "../Button";
 import Search from "../Search";
 import './header.css'
 
-const Header = () => {
+const Header = ({handleSubmit}) => {
     const [showAddMovie, setShowAddMovie] = useState(false);
 
     const handleClick = () => {
@@ -18,7 +18,7 @@ const Header = () => {
         <header className="header-container">
             <Button handleClick={handleClick}/>
             <Search />
-            {showAddMovie && <AddMovie handleClose={handleClose}/>}
+            {showAddMovie && <AddMovie handleClose={handleClose} handleSubmit={handleSubmit}/>}
         </header>
     );
 }

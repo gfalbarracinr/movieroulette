@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GenreTypeInput from './GenreTypeInput';
 import './addMovie.css';
+import { Input } from './Input';
 
-const AddMovie = ({handleClose, handleSubmit}) => {
+const AddMovie = ({handleClose, handleSubmit, movie}) => {
   const clickClose = (e) => {
     handleReset(e);
     handleClose();
@@ -11,18 +12,28 @@ const AddMovie = ({handleClose, handleSubmit}) => {
 
   const handleReset = (e)=> {
     const form = e.currentTarget.closest('form');
-    console.log("form element", form, e.target);
     form.reset();
   }
 
+  const getInputValues = (form) => {
+    let result = {};
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(element => {
+      result[element.id] = element.value;
+    });
+    return result;
+  }
   const clickSubmit = (e) => {
     e.preventDefault();
-    const formInput = 
+    const formInput = getInputValues(e.target);
+    formInput.key = movie != null ? movie.key : new Date().getTime();
+    formInput.image = movie != null ? movie.image : null;
     handleSubmit(formInput);
+    clickClose(e);
   }
   return (
     <section className='add-movie-container'>
-      <form id="addmovie" onSubmit={handleSubmit}>
+      <form id="addmovie" onSubmit={clickSubmit}>
       <section className='row'>
         <h1>ADD MOVIE</h1>
         <span onClick={clickClose} className='modal-close'>X</span>
@@ -30,21 +41,21 @@ const AddMovie = ({handleClose, handleSubmit}) => {
       <section className='row'>
         <article className='col'>
           <label for="title">TITLE</label>
-          <input className='addMovie-input' type="text" name="title" id="title" required />
+          <Input type="text" name="title" value={movie != null ? movie.title : ''}/>
         </article>
         <article className='col'>
           <label for="dateRelease">RELEASE DATE</label>
-          <input  className='addMovie-input' type="date" name="dateRelease" id="dateRelease" required />
+          <Input type="date" name="dateRelease" value={movie != null ? movie.dateRelease : ''}/>
         </article>
       </section>
       <section className='row'>
         <article  className='col'>
           <label for="url" >MOVIE URL</label>
-          <input type="url" className='addMovie-input' name="url" id="url" required />
+          <Input type="url" name="url" value={movie != null ? movie.url : ''}/>
         </article>
         <article  className='col'>
           <label for="rating">RATING</label>
-          <input type="number" className='addMovie-input' name="rating" id="rating" required />
+          <Input type="number" name="rating" value={movie != null ? movie.rating : ''} />
         </article>
       </section>
       <section className='row'>
@@ -53,18 +64,17 @@ const AddMovie = ({handleClose, handleSubmit}) => {
         </article>
         <article  className='col'>
           <label for="runtime">RUNTIME</label>
-          <input type="number" className='addMovie-input' name="runtime" id="runtime" required />
+          <Input type="number" name="runtime" value={movie != null ? movie.runtime : ''}/>
         </article>
       </section>
       <section className='row'>
         <article  className='col col-100'>
           <label for="overview">OVERVIEW</label>
-          <textarea className='addMovie-text addMovie-input' id="story" name="story" placeholder='Movie description'>
-          </textarea>
+          <Input name="story" type="textarea" value={movie != null ? movie.story : ''} />
         </article>
       </section>
       <section className='row button-section'>
-        <button className='reset' type='button' onClick={handleReset}> reset </button>
+        <button className='reset' type='button' onClick={handleReset} disabled={movie != null}> reset </button>
         <button className='submit' type='submit'> Submit </button>
       </section>
       </form>
