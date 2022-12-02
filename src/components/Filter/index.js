@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from 'prop-types';
 import "./filter.css"
 import FilterType, { capitalizeFirstLetter } from "./FilterType";
 
@@ -36,7 +37,7 @@ class Filter extends Component {
 }
 
 Filter.propTypes = {
-    handleFilterChange: Function.isrequired
+    handleFilterChange: PropTypes.func.isRequired
 }
  
 export default Filter;
