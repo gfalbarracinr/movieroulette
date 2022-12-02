@@ -6,6 +6,13 @@ const FilterType =  {
     CRIME: 4,
     ACTION: 5
 } 
+
+export const getMovieFilters = () => {
+    const filter = {...FilterType};
+    delete filter.ALL;
+    return Object.values(filter);
+
+}
 export const resolveFilterName = (filter) => {
     const genre = Object.keys(FilterType).find(key => FilterType[key] === filter);
     return capitalizeFirstLetter(genre);

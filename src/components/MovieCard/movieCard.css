@@ -36,3 +36,50 @@
     display: flex;
     margin: 8px 0;
 }
+
+.movie-setting {
+    position: absolute;
+    margin-left: -50px;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: var(--black);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.movie-setting:hover {
+    background-color: var(--red);
+}
+.movie-setting > img {
+    margin: 0;
+    width: 4px;
+    height: 4px;
+    background-color: var(--white);
+    border-radius: 50%;
+    margin: 1px 0;
+    justify-content: center;   
+}
+
+.modal-container {
+    position: absolute;
+    height: 100px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    justify-content: center;
+}
+.modal-container > button {
+    height: 50%;
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.modal-container > button:hover {
+    background-color: var(--red);
+}

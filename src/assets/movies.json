@@ -1,10 +1,70 @@
 {
     "movies": [
-        {"name": "Bohemian Rhapsody", "genre": 1, "year": 2018, "image": "bohemianrhapsody.png"},
-        {"name": "Inception", "genre": 3, "year": 2010, "image": "inception.png"},
-        {"name": "Kill Bill", "genre": 4, "year": 2004, "image": "killbill.png"},
-        {"name": "Pulp Fiction", "genre": 4, "year": 1997, "image": "pulpfiction.png"},
-        {"name": "Avengers", "genre": 3, "year": 2012, "image": "avengers.png"},
-        {"name": "Reservoir Dogs", "genre": 2, "year": 1990, "image": "reservoirdogs.png"}
+        {
+            "title": "Bohemian Rhapsody",
+            "genre": 1,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "bohemianrhapsody.png",
+            "key": 1
+        },
+        {
+            "title": "Inception",
+            "genre": 3,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "inception.png",
+            "key": 2
+        },
+        {
+            "title": "Kill Bill",
+            "genre": 4,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "killbill.png",
+            "key": 3
+        },
+        {
+            "title": "Pulp Fiction",
+            "genre": 4,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "pulpfiction.png",
+            "key": 4
+        },
+        {
+            "title": "Avengers",
+            "genre": 3,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "avengers.png",
+            "key": 5
+        },
+        {
+            "title": "Reservoir Dogs",
+            "genre": 2,
+            "dateRelease": "2017-11-28",
+            "story": "this is the story",
+            "url": "https://queen.com",
+            "rating": 45,
+            "runtime": 120,
+            "image": "reservoirdogs.png",
+            "key": 6
+        }
     ]
 }
